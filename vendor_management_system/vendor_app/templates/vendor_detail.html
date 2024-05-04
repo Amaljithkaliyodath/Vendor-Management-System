@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Detail</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ vendor.name }}</h1>
+        <p>Contact Details: {{ vendor.contact_details }}</p>
+        <p>Address: {{ vendor.address }}</p>
+        <p>Vendor Code: {{ vendor.vendor_code }}</p>
+        <p>On-Time Delivery Rate: {{ vendor.on_time_delivery_rate }}%</p>
+        <p>Average Quality Rating: {{ vendor.quality_rating_avg }}</p>
+        <p>Average Response Time: {{ vendor.average_response_time }} seconds</p>
+        <p>Fulfillment Rate: {{ vendor.fulfillment_rate }}%</p>
+    </div>
+</body>
+</html>

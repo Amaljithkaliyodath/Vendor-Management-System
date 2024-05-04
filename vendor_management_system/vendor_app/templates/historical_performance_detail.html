@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historical Performance Detail</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Historical Performance for {{ vendor.name }}</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>On-Time Delivery Rate</th>
+                    <th>Quality Rating Avg</th>
+                    <th>Average Response Time</th>
+                    <th>Fulfillment Rate</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for performance in performances %}
+                <tr>
+                    <td>{{ performance.date }}</td>
+                    <td>{{ performance.on_time_delivery_rate }}</td>
+                    <td>{{ performance.quality_rating_avg }}</td>
+                    <td>{{ performance.average_response_time }}</td>
+                    <td>{{ performance.fulfillment_rate }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

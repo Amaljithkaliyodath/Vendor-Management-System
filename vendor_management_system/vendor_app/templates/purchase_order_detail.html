@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchase Order Detail</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css\style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Purchase Order #{{ po.po_number }}</h1>
+        <p>Vendor: {{ po.vendor.name }}</p>
+        <p>Order Date: {{ po.order_date }}</p>
+        <p>Delivery Date: {{ po.delivery_date }}</p>
+        <p>Items: {{ po.items|json_script }}</p>
+        <p>Quantity: {{ po.quantity }}</p>
+        <p>Status: {{ po.status }}</p>
+        {% if po.quality_rating %}
+        <p>Quality Rating: {{ po.quality_rating }}</p>
+        {% endif %}
+        <p>Issue Date: {{ po.issue_date }}</p>
+        {% if po_acknowledgment_date %}
+        <p>Acknowledgment Date: {{ po.acknowledgment_date }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
