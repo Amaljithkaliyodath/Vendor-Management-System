@@ -1,8 +1,9 @@
+
 """
-URL configuration for vendor_management_system project.
+URL configuration for vendor_management project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.2/topics/http/urls/
+    https://docs.djangoproject.com/en/5.0/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -15,17 +16,18 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
+
 from django.contrib import admin
-from django.urls import path,include
-from vendor_app.views import vendor_detail, purchase_order_detail, historical_performance_detail
+from django.urls import include, path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('vendor_app.urls')),
-    path('vendor/<int:vendor_id>/', vendor_detail, name='vendor_detail'),
-    path('purchase_order/<int:po_id>/', purchase_order_detail, name='purchase_order_detail'),
-    path('historical_performance/<int:vendor_id>/', historical_performance_detail, name='historical_performance_detail'),
 ]
+
+    
+
+
 
 
 
